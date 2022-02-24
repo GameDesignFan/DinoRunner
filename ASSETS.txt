@@ -1,0 +1,12 @@
+﻿The Screen Management system was created by Microsoft. The code was found from a port in GitHub (https://github.com/tomizechsterson/game-state-management-monogame).
+The link for the system it references does not work anymore. 
+
+Content/Fonts/PressStart2P was created by CodeMan38 (https://fonts.google.com/?query=CodeMan38) licensed under Open Font License (https://fonts.google.com/specimen/Press+Start+2P#license)
+
+Content/Sounds/Confirm 1.wav was created by jdwasabi (https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack)
+
+Content/Sounds/NDKG_CreepyAtmosphere_Looped.wav was created by blockydk (https://blockydk.itch.io/creepy-atmospheric-ambient-music) licensed Royalty Free
+
+Content/Sprites/Background/* (all of the images in there at this point in time) were created by pixfinity (https://pixfinity.itch.io/the-dungeon-pack)
+
+Content/Sprites/Characters/Sprite.png was created by pixfinity (https://pixfinity.itch.io/the-dungeon-pack)
