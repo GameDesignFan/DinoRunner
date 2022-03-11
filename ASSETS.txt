@@ -10,3 +10,9 @@ Content/Sounds/NDKG_CreepyAtmosphere_Looped.wav was created by blockydk (https:/
 Content/Sprites/Background/* (all of the images in there at this point in time) were created by pixfinity (https://pixfinity.itch.io/the-dungeon-pack)
 
 Content/Sprites/Characters/Sprite.png was created by pixfinity (https://pixfinity.itch.io/the-dungeon-pack)
+
+Partles/* was created using the content from in-class tutorials
+
+Content/Sprites/Items/sword.png was created by 0x72 (https://0x72.itch.io/) licensed under Creative Commons (https://creativecommons.org/share-your-work/public-domain/cc0/)
+
+Content/Sprites/Particles/spiky_11.png was created by kronbits (https://kronbits.itch.io/) licensed under Creative Commons (https://creativecommons.org/share-your-work/public-domain/cc0/)

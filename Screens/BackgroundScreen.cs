@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using DinoRunner.Particles;
 using DinoRunner.StateManagement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -8,13 +10,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace DinoRunner.Screens
 {
-    public class BackgroundScreen : GameScreen
+    public class BackgroundScreen : GameScreen, IParticleEmitter
     {
         private ContentManager _content;
         private Texture2D _backgroundTexture;
+        private FireworkParticleSystem _firework;
+        private DinoRunnerGame _dinoRunnerGame;
+        private Random _random = new Random();
 
-        public BackgroundScreen()
+        public BackgroundScreen(DinoRunnerGame dinoRunnerGame)
         {
+            this._dinoRunnerGame = dinoRunnerGame;
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
         }
@@ -25,6 +31,9 @@ namespace DinoRunner.Screens
                 _content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             _backgroundTexture = _content.Load<Texture2D>("Sprites/Background/MiddleLayer");
+
+            _firework = new FireworkParticleSystem(_dinoRunnerGame, 3);
+            _dinoRunnerGame.Components.Add(_firework);
         }
 
         public override void Unload()
@@ -34,6 +43,10 @@ namespace DinoRunner.Screens
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                _firework.PlaceFirework(new Vector2(_random.Next(1000), _random.Next(1000)));
+            }
             base.Update(gameTime, otherScreenHasFocus, false);
         }
 
@@ -47,5 +60,8 @@ namespace DinoRunner.Screens
             spriteBatch.Draw(_backgroundTexture, fullscreen, new Color(TransitionAlpha, TransitionAlpha, TransitionAlpha));
             spriteBatch.End();
         }
+
+        public Vector2 Position { get; }
+        public Vector2 Velocity { get; }
     }
 }

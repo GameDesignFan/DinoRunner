@@ -30,7 +30,7 @@ namespace DinoRunner
 
         private void GenerateInitialScreens()
         {
-            _screenManager.AddScreen(new BackgroundScreen(), null);
+            _screenManager.AddScreen(new BackgroundScreen(this), null);
             _screenManager.AddScreen(new MainMenuScreen(), null);
         }
 

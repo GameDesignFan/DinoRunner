@@ -27,6 +27,8 @@ namespace DinoRunner.Screens
         private Texture2D _downLayer;
         private Texture2D _sky;
 
+        private Texture2D _sword;
+
         private Player _player;
         private Song _backgroundMusic;
 
@@ -49,6 +51,8 @@ namespace DinoRunner.Screens
             _middleLayer = _content.Load<Texture2D>("Sprites/Background/MiddleLayer");
             _downLayer = _content.Load<Texture2D>("Sprites/Background/DownLayer");
             _sky = _content.Load<Texture2D>("Sprites/Background/Sky");
+
+            _sword = _content.Load<Texture2D>("Sprites/Items/sword");
 
             _player = new Player();
             _player.LoadContent(_content);
@@ -143,6 +147,7 @@ namespace DinoRunner.Screens
 
             Matrix transform;
 
+
             var scale = Matrix.CreateScale(4, 3, 480f);
 
             var playerX = MathHelper.Clamp(_player.Position.X, 300, 13600);
@@ -182,6 +187,11 @@ namespace DinoRunner.Screens
             // Player
             spriteBatch.Begin();
             _player.Draw(gameTime, spriteBatch);
+            spriteBatch.End();
+
+            // First Sword
+            spriteBatch.Begin();
+            spriteBatch.Draw(_sword, new Vector2(385, 380), null, Color.White, 0.4f, new Vector2(_sword.Width / 2, _sword.Height / 2), 1.0f, SpriteEffects.None, 0);
             spriteBatch.End();
         }
     }
